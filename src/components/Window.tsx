@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useDragControls } from 'framer-motion';
 import { useStore } from '@/store/useStore';
 import { Minus, Square, X } from 'lucide-react';
 import { clsx } from 'clsx';
@@ -15,6 +15,7 @@ interface WindowProps {
 export default function Window({ id, children }: WindowProps) {
   const { activeWindow, closeWindow, focusWindow, minimizeWindow, viewMode, openWindows, minimizedWindows } = useStore();
   const [isMaximized, setIsMaximized] = useState(false);
+  const dragControls = useDragControls();
   
   const isActive = activeWindow === id;
   const isMinimized = minimizedWindows?.includes(id);
@@ -29,6 +30,8 @@ export default function Window({ id, children }: WindowProps) {
       drag={!isMaximized}
       dragMomentum={false}
       dragElastic={0}
+      dragListener={false} // Locks dragging from random clicks
+      dragControls={dragControls}
       onPointerDown={() => focusWindow(id)}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
@@ -37,15 +40,21 @@ export default function Window({ id, children }: WindowProps) {
       className={clsx(
         "absolute bg-[var(--color-retro-window)] border-2 border-[var(--color-retro-border)] flex flex-col pointer-events-auto resize overflow-hidden",
         isActive ? "z-[60] hard-shadow-lg" : "z-[50] hard-shadow",
-        isMaximized ? "!w-full !h-full !inset-0 !transform-none" : "w-[600px] max-w-[90vw] h-[450px] max-h-[85vh]"
+        isMaximized && "!w-full !h-full !inset-0 !transform-none"
       )}
       style={!isMaximized ? {
-        top: "15vh",
-        left: `calc(50vw - 300px + ${id.length * 10}px)`, 
+        top: "10vh",
+        left: `calc(50vw - 425px + ${id.length * 10}px)`, 
+        width: "min(95vw, 850px)",
+        height: "min(90vh, 650px)"
       } : {}}
     >
       {/* Window Header (Drag Handle) */}
       <div 
+        onPointerDown={(e) => {
+          focusWindow(id);
+          if (!isMaximized) dragControls.start(e);
+        }}
         className={clsx(
           "h-8 px-2 flex items-center justify-between cursor-move select-none shrink-0",
           isActive ? "bg-[var(--color-retro-primary)] text-white" : "bg-gray-400 text-gray-200"

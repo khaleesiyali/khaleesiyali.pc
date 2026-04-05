@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useStore } from '@/store/useStore';
 
 const BOOT_LOGS = [
   "Loading Waseda_University_Modules...",
@@ -36,6 +37,9 @@ export default function BootSequence() {
     const finalId = setTimeout(() => {
       setBooting(false);
       sessionStorage.setItem('hasBooted', 'true');
+      
+      // Auto-open the About Me window when boot finishes
+      useStore.getState().openWindow('aboutMe');
     }, 500 * BOOT_LOGS.length + 1000);
     timeoutIds.push(finalId);
 
