@@ -4,13 +4,15 @@ import React from 'react';
 import { useStore } from '@/store/useStore';
 import { cn } from './ModeSwitcher';
 import ModeSwitcher from './ModeSwitcher';
-import { Terminal, FolderOpen, Briefcase, Trash2, Star, ChevronUp } from 'lucide-react';
+import { Terminal, FolderOpen, Briefcase, Trash2, Star, ChevronUp, Palette, Gamepad2 } from 'lucide-react';
 
 // A mapping of window IDs to a recognizable icon/title for the taskbar
 export const APP_CONFIG: Record<string, { title: string; icon: React.ReactNode }> = {
   aboutMe: { title: 'About Me', icon: <FolderOpen size={16} /> },
   projects: { title: 'Projects', icon: <Briefcase size={16} /> },
   publications: { title: 'Publications', icon: <Terminal size={16} /> },
+  paint: { title: 'Paint', icon: <Palette size={16} /> },
+  games: { title: 'Games', icon: <Gamepad2 size={16} /> },
   trash: { title: 'Trash', icon: <Trash2 size={16} /> },
   extras: { title: 'Extras', icon: <Star size={16} /> }
 };

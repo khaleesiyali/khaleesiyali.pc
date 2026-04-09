@@ -29,7 +29,8 @@ const PROJECTS = [
   {
     title: 'AmanAI',
     type: 'exe',
-    description: 'An AI Voice assistant helping visually impaired individuals and foreign residents navigate Japanese bureaucracy by automatically filling out ward office forms (区役所).',
+    role: 'Frontend Developer',
+    description: 'An AI Voice assistant helping visually impaired individuals and foreign residents navigate Japanese bureaucracy by automatically filling out ward office forms.',
     tech: ['Next.js', 'OpenAI API', 'LiveKit'],
     links: { github: 'https://github.com/khaleesiyali/AmanAI-GDGJP-Hackathon-SR', behance: 'https://www.behance.net/gallery/247278089/AmanAI' },
     color: 'bg-indigo-100',
@@ -38,24 +39,29 @@ const PROJECTS = [
   {
     title: 'EchoStock',
     type: 'bat',
+    role: 'Frontend Developer',
     description: 'A VoiceOS-powered warehouse logistics tool. Enables hands-free stock updates, maintenance scheduling, and equipment ordering via voice commands.',
     tech: ['Next.js', 'Python', 'VoiceOS'],
     links: { github: 'https://github.com/khaleesiyali/EchoStock_VoiceOS---Cloud999', behance: '#' },
     color: 'bg-green-100',
     border: 'border-green-400'
   },
+
   {
-    title: 'HIT: UX Research',
-    type: 'pdf',
-    description: 'A comparative UX study of 95 participants contrasting Japanese and Western design paradigms to determine the fastest, most trustworthy layouts.',
-    tech: ['React', 'PostHog', 'Figma', 'Data Analysis'],
-    links: { github: 'https://github.com/khaleesiyali/HIT_JP-WSTRN-UX-Research', behance: '#' },
-    color: 'bg-red-100',
-    border: 'border-red-400'
+    title: 'CarbonLeaf',
+    type: 'sh',
+    role: 'Fullstack Developer',
+    description: 'A personalized carbon footprint calculator designed to help individuals track and reduce their environmental impact.',
+    tech: ['React', 'Python: Django'],
+    links: { github: 'https://github.com/khaleesiyali/CarbonLeaf_Carbon-Footprint-Calculator', behance: '#' },
+    //color: 'bg-yellow-100',
+    border: 'border-yellow-400'
   },
+
   {
     title: 'WaSeki',
     type: 'app',
+    role: 'Fullstack Developer',
     description: 'Real-time seat-navigation app for 8,000+ Waseda University students to find study spots in libraries and lounges instantly.',
     tech: ['React Native', 'Supabase', 'Google Cloud'],
     links: { github: '#', behance: '#', figma: '#' },
@@ -63,14 +69,17 @@ const PROJECTS = [
     border: 'border-blue-400'
   },
   {
-    title: 'CarbonLeaf',
-    type: 'sh',
-    description: 'A personalized carbon footprint calculator designed to help individuals track and reduce their environmental impact.',
-    tech: ['React', 'Python: Django'],
-    links: { github: 'https://github.com/khaleesiyali/CarbonLeaf_Carbon-Footprint-Calculator', behance: '#' },
-    color: 'bg-yellow-100',
-    border: 'border-yellow-400'
-  }
+    title: 'HIT: UX Research',
+    type: 'pdf',
+    role: 'Frontend | UX Researcher',
+    description: 'A comparative UX study of 95 participants contrasting Japanese and Western design paradigms to determine the fastest, most trustworthy layouts.',
+    tech: ['React', 'PostHog', 'Figma', 'Data Analysis'],
+    links: { github: 'https://github.com/khaleesiyali/HIT_JP-WSTRN-UX-Research', behance: '#' },
+    color: 'bg-red-100',
+    border: 'border-red-400'
+  },
+
+
 ];
 
 export default function Projects() {
@@ -92,7 +101,8 @@ export default function Projects() {
           {/* Box Content */}
           <div className="p-5 flex-1 flex flex-col">
             <div className="mb-4 flex-1">
-              <h3 className="font-black text-xl mb-3 text-neutral-800 tracking-tight leading-tight">{proj.title}</h3>
+              <h3 className="font-black text-xl mb-1 text-neutral-800 tracking-tight leading-tight">{proj.title}</h3>
+              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 pb-2 border-b border-gray-100">{proj.role}</p>
               <p className="text-sm text-neutral-600 leading-relaxed">{proj.description}</p>
             </div>
 

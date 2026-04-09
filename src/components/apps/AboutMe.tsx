@@ -15,6 +15,12 @@ const LinkedinIcon = ({ className, size = 20 }: { className?: string, size?: num
   </svg>
 );
 
+const BehanceIcon = ({ size = 20, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.226-2.477-2.226-1.365 0-2.352.74-2.488 2.226zm-9.392-6.066l1.64.444c1.13.323 1.637 1.156 1.637 2.146 0 .965-.615 1.621-1.353 2.003 1.348.337 2.296 1.258 2.296 2.658 0 2.235-1.921 2.815-3.09 2.815h-5.074v-10.066h3.944zm-1.15 4.148h1.272c.677 0 1.26-.264 1.26-1.127 0-.712-.472-1.128-1.156-1.128h-1.376v2.255zm0 3.992h1.492c.863 0 1.54-.378 1.54-1.31 0-.903-.666-1.332-1.54-1.332h-1.492v2.642z" />
+  </svg>
+);
+
 export default function AboutMe() {
   return (
     <div className="flex flex-col h-full font-sans text-sm tracking-tight text-neutral-800 bg-[#ebebeb] overflow-hidden">
@@ -42,7 +48,7 @@ export default function AboutMe() {
             </p>
             <p>
               My world revolves around <strong className="bg-[var(--color-retro-window)] px-1 border border-gray-300">Natural Language Processing (NLP)</strong> and <strong className="bg-[var(--color-retro-window)] px-1 border border-gray-300">Machine Learning</strong>.
-              Whether I’m engineering lexicon-augmented models to understand human emotion or leading front-end teams to build accessible digital interfaces, I thrive on turning complex data into meaningful human experiences.
+              Whether I’m engineering models to understand human emotion or leading front-end teams to build accessible digital interfaces, I thrive on turning complex data into meaningful human experiences.
             </p>
             <p>
               When I’m not fine-tuning Transformers, you’ll likely find me coaching aspiring students, strategizing over a chess board, or getting lost in digital creation. I believe technology should feel as intuitive as a conversation and as storied as a well-loved book.
@@ -168,11 +174,14 @@ export default function AboutMe() {
       <div className="bg-[var(--color-retro-bg)] border-t-4 border-[var(--color-retro-border)] p-4 shrink-0 flex items-center justify-between shadow-[inset_0_4px_4px_rgba(0,0,0,0.05)]">
 
         <div className="flex items-center gap-3">
-          <a href="https://www.linkedin.com/in/eleale-tee-4b4009314" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
+          <a href="https://www.linkedin.com/in/eleale-tee-4b4009314" target="_blank" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
             <LinkedinIcon size={20} className="text-[var(--color-retro-primary)] group-hover:scale-110 transition-transform" />
           </a>
-          <a href="https://github.com/khaleesiyali" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
+          <a href="https://github.com/khaleesiyali" target="_blank" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
             <GithubIcon size={20} className="text-gray-900 group-hover:scale-110 transition-transform" />
+          </a>
+          <a href="https://www.behance.net/elealetee" target="_blank" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
+            <BehanceIcon size={20} className="text-[#0057ff] group-hover:scale-110 transition-transform" />
           </a>
           <a href="mailto:tee.eleale@gmail.com" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
             <Mail size={20} className="text-red-500 group-hover:scale-110 transition-transform" />
@@ -181,7 +190,7 @@ export default function AboutMe() {
 
         <a
           href="/assets/2026_TEE_CV.pdf"
-          download
+          download="2026_TEE_CV.pdf"
           className="flex items-center gap-2 bg-[var(--color-retro-primary)] text-white border-2 border-black px-4 py-2 font-bold hover:brightness-110 active:translate-y-[2px] active:translate-x-[2px] transition-all cursor-pointer shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none"
         >
           <Download size={18} />
