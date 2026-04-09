@@ -67,7 +67,7 @@ export default function AboutMe() {
                 Languages
               </h3>
               <div className="flex flex-wrap gap-2">
-                {['Python', 'JavaScript', 'CSS & HTML', 'PHP'].map((skill) => (
+                {['Python', 'JavaScript', 'TypeScript', 'CSS & HTML', 'PHP'].map((skill) => (
                   <span key={skill} className="bg-blue-50 text-[var(--color-retro-primary)] border border-blue-200 px-2 py-1 text-xs font-bold shadow-sm">
                     {skill}
                   </span>
@@ -168,10 +168,10 @@ export default function AboutMe() {
       <div className="bg-[var(--color-retro-bg)] border-t-4 border-[var(--color-retro-border)] p-4 shrink-0 flex items-center justify-between shadow-[inset_0_4px_4px_rgba(0,0,0,0.05)]">
 
         <div className="flex items-center gap-3">
-          <a href="#" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
+          <a href="https://www.linkedin.com/in/eleale-tee-4b4009314" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
             <LinkedinIcon size={20} className="text-[var(--color-retro-primary)] group-hover:scale-110 transition-transform" />
           </a>
-          <a href="#" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
+          <a href="https://github.com/khaleesiyali" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
             <GithubIcon size={20} className="text-gray-900 group-hover:scale-110 transition-transform" />
           </a>
           <a href="mailto:tee.eleale@gmail.com" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
