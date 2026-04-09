@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "khaleesiyali.pc",
   description: "Eleale Tee's Portfolio",
+  icons: {
+    icon: "/cat8bit.gif"
+  }
 };
 
 export default function RootLayout({

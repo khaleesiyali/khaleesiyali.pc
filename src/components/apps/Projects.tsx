@@ -42,7 +42,7 @@ const PROJECTS = [
     role: 'Frontend Developer',
     description: 'A VoiceOS-powered warehouse logistics tool. Enables hands-free stock updates, maintenance scheduling, and equipment ordering via voice commands.',
     tech: ['Next.js', 'Python', 'VoiceOS'],
-    links: { github: 'https://github.com/khaleesiyali/EchoStock_VoiceOS---Cloud999', behance: '#' },
+    links: { github: 'https://github.com/khaleesiyali/EchoStock_VoiceOS---Cloud999', /*behance: '#' */ },
     color: 'bg-green-100',
     border: 'border-green-400'
   },
@@ -53,7 +53,7 @@ const PROJECTS = [
     role: 'Fullstack Developer',
     description: 'A personalized carbon footprint calculator designed to help individuals track and reduce their environmental impact.',
     tech: ['React', 'Python: Django'],
-    links: { github: 'https://github.com/khaleesiyali/CarbonLeaf_Carbon-Footprint-Calculator', behance: '#' },
+    links: { github: 'https://github.com/khaleesiyali/CarbonLeaf_Carbon-Footprint-Calculator', /*behance: '#'*/ },
     //color: 'bg-yellow-100',
     border: 'border-yellow-400'
   },
@@ -64,7 +64,7 @@ const PROJECTS = [
     role: 'Fullstack Developer',
     description: 'Real-time seat-navigation app for 8,000+ Waseda University students to find study spots in libraries and lounges instantly.',
     tech: ['React Native', 'Supabase', 'Google Cloud'],
-    links: { github: '#', behance: '#', figma: '#' },
+    links: { github: '#', /*behance: '#'*/ figma: 'https://www.figma.com/design/FwwIiWRpjGrZO1QYJMDALK/WASEKI?t=vYsQBDSYfkhEKyOX-1' },
     color: 'bg-blue-100',
     border: 'border-blue-400'
   },
@@ -74,7 +74,7 @@ const PROJECTS = [
     role: 'Frontend | UX Researcher',
     description: 'A comparative UX study of 95 participants contrasting Japanese and Western design paradigms to determine the fastest, most trustworthy layouts.',
     tech: ['React', 'PostHog', 'Figma', 'Data Analysis'],
-    links: { github: 'https://github.com/khaleesiyali/HIT_JP-WSTRN-UX-Research', behance: '#' },
+    links: { github: 'https://github.com/khaleesiyali/HIT_JP-WSTRN-UX-Research', /* behance: '#' */ },
     color: 'bg-red-100',
     border: 'border-red-400'
   },

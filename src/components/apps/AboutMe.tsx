@@ -87,7 +87,7 @@ export default function AboutMe() {
                 Tools
               </h3>
               <div className="flex flex-wrap gap-2">
-                {['Adobe Creative Suite', 'Microsoft Office', 'LaTeX', 'Git/GitHub'].map((tool) => (
+                {['Adobe Creative Suite', 'Figma', 'Microsoft Office', 'LaTeX', 'Git/GitHub',].map((tool) => (
                   <span key={tool} className="bg-pink-50 text-pink-700 border border-pink-200 px-2 py-1 text-xs font-bold shadow-sm">
                     {tool}
                   </span>

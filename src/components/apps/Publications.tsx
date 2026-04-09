@@ -7,8 +7,8 @@ const FILE_SYSTEM: Record<string, string> = {
 };
 
 export default function Publications() {
-  const [history, setHistory] = useState<{cmd: string, out: string}[]>([
-    {cmd: '', out: 'Waseda OS Terminal (v1.0.0)\nType "ls" to list papers, or "cat <filename>" to read abstract.\nType "clear" to reset terminal.'}
+  const [history, setHistory] = useState<{ cmd: string, out: string }[]>([
+    { cmd: '', out: 'Khaleesiyali OS Terminal (v1.0.0)\nType "ls" to list papers, or "cat <filename>" to read abstract.\nType "clear" to reset terminal.' }
   ]);
   const [input, setInput] = useState('');
   const endRef = useRef<HTMLDivElement>(null);
@@ -33,9 +33,9 @@ export default function Publications() {
       else if (FILE_SYSTEM[parts[1]]) out = FILE_SYSTEM[parts[1]];
       else out = `cat: ${parts[1]}: No such file or directory`;
     } else if (main === 'clear') {
-       setHistory([]);
-       setInput('');
-       return;
+      setHistory([]);
+      setInput('');
+      return;
     } else {
       out = `command not found: ${main}`;
     }
@@ -45,8 +45,8 @@ export default function Publications() {
   };
 
   return (
-    <div 
-      className="font-mono text-xs sm:text-sm bg-black text-green-400 p-4 h-full min-h-[300px] overflow-y-auto cursor-text select-text" 
+    <div
+      className="font-mono text-xs sm:text-sm bg-black text-green-400 p-4 h-full min-h-[300px] overflow-y-auto cursor-text select-text"
       onClick={() => document.getElementById('term-input')?.focus()}
     >
       {history.map((item, i) => (
@@ -57,9 +57,9 @@ export default function Publications() {
       ))}
       <form onSubmit={handleSubmit} className="flex gap-2">
         <span className="text-white">&gt;</span>
-        <input 
+        <input
           id="term-input"
-          type="text" 
+          type="text"
           value={input}
           onChange={e => setInput(e.target.value)}
           autoComplete="off"
