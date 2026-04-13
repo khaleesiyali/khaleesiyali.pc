@@ -19,7 +19,7 @@ export default function ModeSwitcher({ className }: { className?: string }) {
     <button
       onClick={() => router.push(isWebsite ? '/' : '/website')}
       className={cn(
-        "flex items-center gap-2 px-3 py-1.5 border-2 border-[var(--color-retro-border)] bg-[var(--color-retro-bg)] hard-shadow active:hard-shadow-pressed hover:bg-[var(--color-retro-window)] transition-all font-bold text-sm cursor-pointer",
+        "flex items-center gap-2 px-3 py-1.5 border-2 border-gray-500 bg-[var(--color-retro-bg)] text-[var(--foreground)] hard-shadow active:hard-shadow-pressed hover:bg-[var(--color-retro-window)] transition-all font-bold text-sm cursor-pointer",
         className
       )}
     >

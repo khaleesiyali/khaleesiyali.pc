@@ -151,7 +151,7 @@ export default function Games() {
 
   if (activeGame === 'snake') {
     return (
-      <div className="flex flex-col h-full bg-black font-mono text-green-500 overflow-hidden relative">
+      <div className="flex flex-col h-full bg-[var(--color-retro-primary)] font-mono text-green-500 overflow-hidden relative">
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(0,0,0,0.4)_100%)] z-10" />
         <div className="absolute inset-0 pointer-events-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50 z-10" />
 
@@ -204,11 +204,11 @@ export default function Games() {
 
             {/* Overlays */}
             {isGameOver && (
-              <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-center animate-in fade-in z-30">
+              <div className="absolute inset-0 bg-[var(--color-retro-primary)]/80 flex flex-col items-center justify-center text-center animate-in fade-in z-30">
                 <h2 className="text-4xl font-black text-red-500 mb-4 animate-bounce tracking-widest">GAME OVER</h2>
                 <button 
                   onClick={resetGame}
-                  className="flex items-center gap-2 border-2 border-green-500 px-4 py-2 hover:bg-green-500 hover:text-black transition-colors"
+                  className="flex items-center gap-2 border-2 border-green-500 px-4 py-2 hover:bg-green-500 hover:text-[var(--color-win-text)] transition-colors"
                 >
                   <RefreshCw size={16} /> PLAY AGAIN
                 </button>
@@ -216,7 +216,7 @@ export default function Games() {
             )}
             
             {isPaused && !isGameOver && (
-              <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center z-30 backdrop-blur-sm">
+              <div className="absolute inset-0 bg-[var(--color-retro-primary)]/60 flex flex-col items-center justify-center text-center z-30 backdrop-blur-sm">
                 <h2 className="text-2xl font-black mb-4 tracking-widest animate-pulse">PAUSED</h2>
                 <p className="text-sm opacity-80 mb-6">Press SPACE to Resume</p>
                 <div className="flex gap-4">
@@ -235,9 +235,9 @@ export default function Games() {
 
   // File Explorer View
   return (
-    <div className="flex flex-col h-full bg-white font-sans text-sm pb-4 pr-1">
+    <div className="flex flex-col h-full bg-[var(--color-win-body)] font-sans text-sm pb-4 pr-1">
       {/* Menu Bar */}
-      <div className="flex space-x-3 px-2 py-1 pb-1 border-b border-gray-200">
+      <div className="flex space-x-3 px-2 py-1 pb-1 border-b border-[var(--color-win-border)]">
         {['File', 'Edit', 'View', 'Help'].map(m => (
           <span key={m} className="hover:bg-[var(--color-retro-primary)] hover:text-white cursor-pointer px-1">
             <span className="underline">{m.charAt(0)}</span>{m.slice(1)}
@@ -246,16 +246,16 @@ export default function Games() {
       </div>
 
       {/* Path Bar */}
-      <div className="flex items-center gap-2 px-2 py-1.5 border-b border-gray-300 bg-gray-50">
-        <span className="text-gray-500">Address</span>
-        <div className="flex-1 bg-white border border-gray-400 px-2 py-0.5 flex items-center gap-2 shadow-inner">
+      <div className="flex items-center gap-2 px-2 py-1.5 border-b border-[var(--color-win-border)] bg-gray-50">
+        <span className="text-[var(--color-win-text)] opacity-60">Address</span>
+        <div className="flex-1 bg-[var(--color-win-body)] border border-[var(--color-win-border)] px-2 py-0.5 flex items-center gap-2 shadow-inner">
           <FolderOpen size={14} className="text-yellow-500"/>
           C:\My Documents\Games
         </div>
       </div>
 
       {/* File Grid */}
-      <div className="flex-1 p-6 overflow-auto bg-white" onPointerDown={(e) => e.stopPropagation()}>
+      <div className="flex-1 p-6 overflow-auto bg-[var(--color-win-body)]" onPointerDown={(e) => e.stopPropagation()}>
         <div className="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-6">
           
           <div 
@@ -276,7 +276,7 @@ export default function Games() {
             className="flex flex-col items-center gap-2 p-3 hover:bg-blue-50 border border-transparent hover:border-blue-200 opacity-60 cursor-not-allowed group"
           >
             <div className="w-12 h-12 relative flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-500 border-2 border-gray-600 shadow-[2px_2px_0_0_#4b5563]" />
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-500 border-2 border-[var(--color-win-border)] shadow-[2px_2px_0_0_#4b5563]" />
               <Trophy size={24} className="text-white relative z-10" />
             </div>
             <span className="text-center font-mono group-focus:bg-blue-600 group-focus:text-white px-1">
@@ -288,7 +288,7 @@ export default function Games() {
       </div>
 
       {/* Status Bar */}
-      <div className="flex gap-4 border-t border-gray-300 bg-gray-100 px-3 py-1 shadow-inner text-xs text-gray-600">
+      <div className="flex gap-4 border-t border-[var(--color-win-border)] bg-[var(--color-win-secondary)] px-3 py-1 shadow-inner text-xs text-[var(--color-win-text)] opacity-70">
         <span className="flex items-center gap-1"><FolderOpen size={12}/> 2 object(s)</span>
         <span className="flex-1"></span>
         <span>My Computer</span>

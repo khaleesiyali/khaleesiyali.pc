@@ -23,13 +23,13 @@ const BehanceIcon = ({ size = 20, className = "" }) => (
 
 export default function AboutMe() {
   return (
-    <div className="flex flex-col h-full font-sans text-sm tracking-tight text-neutral-800 bg-[#ebebeb] overflow-hidden">
+    <div className="flex flex-col h-full font-sans text-sm tracking-tight text-[var(--color-win-text)] bg-[var(--color-win-secondary)] overflow-hidden border-2 border-gray-500">
 
       {/* Current Status Banner */}
-      <div className="bg-[var(--color-retro-primary)] text-white p-2 px-4 flex items-center justify-center gap-3 shrink-0 border-b-4 border-[var(--color-retro-border)] relative">
-        <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse border border-white"></div>
+      <div className="bg-[var(--color-retro-primary)] text-white p-2 px-4 flex items-center justify-center gap-3 shrink-0 border-b-2 border-gray-500 relative">
+        <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse border border-gray-500"></div>
         <span className="font-bold text-sm tracking-wide uppercase text-center leading-tight">
-          Current Status: Data Science RA (Waseda) & Product Intern (Cognisor AI)
+          Current Status: Data Science RA (Waseda) & Program Manager (Cognisor AI)
         </span>
       </div>
 
@@ -37,23 +37,23 @@ export default function AboutMe() {
       <div className="flex-1 overflow-y-auto p-6 space-y-10 hide-scrollbar scroll-smooth">
 
         {/* Self Intro */}
-        <section className="bg-white p-6 border-2 border-[var(--color-retro-border)] hard-shadow relative">
-          <div className="absolute -top-4 -left-4 bg-yellow-200 border-2 border-retro-border px-3 py-1 font-bold flex items-center gap-2 transform -rotate-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+        <section className="bg-[var(--color-win-body)] p-6 border-2 border-gray-500 hard-shadow relative">
+          <div className="absolute -top-4 -left-4 bg-[var(--color-win-accent)] text-[var(--color-win-body)] border-2 border-retro-border px-3 py-1 font-bold flex items-center gap-2 transform -rotate-2 shadow-[2px_2px_0px_0px_var(--shadow-color)]">
             Hello World!
           </div>
           <div className="text-base leading-relaxed space-y-4 mt-2">
             <p>
-              Hi there! I’m <span className="font-bold text-[var(--color-retro-primary)]">Eleale Tee</span>, though you might know me as <span className="font-bold">Yali</span>.
+              Hi there! I’m <span className="font-bold text-[var(--color-win-accent)]">Eleale Tee</span>, though you might know me as <span className="font-bold">Yali</span>.
               Currently based in Tokyo, I’m a student at Waseda University with a deep fascination for where language meets logic.
             </p>
             <p>
-              My world revolves around <strong className="bg-[var(--color-retro-window)] px-1 border border-gray-300">Natural Language Processing (NLP)</strong> and <strong className="bg-[var(--color-retro-window)] px-1 border border-gray-300">Machine Learning</strong>.
+              My world revolves around <strong className="bg-[var(--color-retro-window)] px-1 border border-[var(--color-win-border)]">Natural Language Processing (NLP)</strong> and <strong className="bg-[var(--color-retro-window)] px-1 border border-[var(--color-win-border)]">Machine Learning</strong>.
               Whether I’m engineering models to understand human emotion or leading front-end teams to build accessible digital interfaces, I thrive on turning complex data into meaningful human experiences.
             </p>
             <p>
               When I’m not fine-tuning Transformers, you’ll likely find me coaching aspiring students, strategizing over a chess board, or getting lost in digital creation. I believe technology should feel as intuitive as a conversation and as storied as a well-loved book.
             </p>
-            <p className="font-bold text-lg pt-2 text-[var(--color-retro-primary)]">
+            <p className="font-bold text-lg pt-2 text-[var(--color-win-accent)]">
               Welcome to my digital workspace—feel free to explore!
             </p>
           </div>
@@ -61,20 +61,20 @@ export default function AboutMe() {
 
         {/* Technical Skills: System Modules */}
         <section>
-          <h2 className="text-xl font-black mb-4 uppercase flex items-center gap-2 border-b-2 border-gray-300 pb-2">
-            <Terminal size={24} className="text-[var(--color-retro-primary)]" />
+          <h2 className="text-xl font-black mb-4 uppercase flex items-center gap-2 border-b-2 border-[var(--color-win-border)] pb-2">
+            <Terminal size={24} className="text-[var(--color-win-accent)]" />
             System Modules
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
             {/* Languages */}
-            <div className="bg-white border-2 border-retro-border p-4 hard-shadow">
-              <h3 className="font-bold mb-3 border-b border-gray-200 pb-1 text-[var(--color-retro-primary)] flex items-center gap-2">
-                Languages
+            <div className="bg-[var(--color-win-body)] border-2 border-gray-500 p-4 hard-shadow">
+              <h3 className="font-bold mb-3 border-b border-[var(--color-win-border)] pb-1 text-[var(--color-win-accent)] flex items-center gap-2">
+                Computer Languages
               </h3>
               <div className="flex flex-wrap gap-2">
                 {['Python', 'JavaScript', 'TypeScript', 'CSS & HTML', 'PHP'].map((skill) => (
-                  <span key={skill} className="bg-blue-50 text-[var(--color-retro-primary)] border border-blue-200 px-2 py-1 text-xs font-bold shadow-sm">
+                  <span key={skill} className="bg-[var(--color-retro-primary)] text-white border border-blue-200 px-2 py-1 text-xs font-bold shadow-sm">
                     {skill}
                   </span>
                 ))}
@@ -82,8 +82,8 @@ export default function AboutMe() {
             </div>
 
             {/* Tools */}
-            <div className="bg-white border-2 border-retro-border p-4 hard-shadow">
-              <h3 className="font-bold mb-3 border-b border-gray-200 pb-1 text-pink-600 flex items-center gap-2">
+            <div className="bg-[var(--color-win-body)] border-2 border-gray-500 p-4 hard-shadow">
+              <h3 className="font-bold mb-3 border-b border-[var(--color-win-border)] pb-1 text-pink-600 flex items-center gap-2">
                 Tools
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -100,44 +100,42 @@ export default function AboutMe() {
 
         {/* Experience Roadmap */}
         <section>
-          <h2 className="text-xl font-black mb-6 uppercase flex items-center gap-2 border-b-2 border-gray-300 pb-2">
+          <h2 className="text-xl font-black mb-6 uppercase flex items-center gap-2 border-b-2 border-[var(--color-win-border)] pb-2">
             <Briefcase size={24} className="text-yellow-600" />
             Experience Roadmap
           </h2>
 
-          <div className="relative border-l-4 border-[var(--color-retro-primary)] ml-3 space-y-6 pb-4">
+          <div className="relative border-l-4 border-gray-500 ml-3 space-y-6 pb-4">
 
             {/* Timeline Item: Present */}
             <div className="relative pl-6 group">
-              <div className="absolute -left-[14px] top-1 w-6 h-6 rounded-full bg-white border-4 border-green-500 shadow-[0_0_0_2px_rgba(0,0,0,1)] transition-transform group-hover:scale-110"></div>
-              <div className="bg-white border-2 border-retro-border p-4 hard-shadow transition-transform group-hover:-translate-y-1">
-                <span className="text-xs font-bold text-green-600 uppercase tracking-widest block mb-2 bg-green-50 w-max px-2 py-0.5 border border-green-200">Present</span>
+              <div className="absolute -left-[14px] top-1 w-6 h-6 rounded-full bg-[var(--color-win-body)] border-4 border-green-500 shadow-[0_0_0_2px_var(--shadow-color)] transition-transform group-hover:scale-110"></div>
+              <div className="bg-[var(--color-win-body)] border-2 border-gray-500 p-4 hard-shadow transition-transform group-hover:-translate-y-1">
+                <span className="text-xs font-bold text-green-600 uppercase tracking-widest block mb-2 bg-green-50 w-max px-2 py-0.5 border border-green-200">2026 - Present</span>
                 <h4 className="font-bold text-lg">Data Science Research Assistant</h4>
-                <p className="text-sm text-gray-600 mb-2 font-mono">@ Waseda University</p>
+                <p className="text-sm text-[var(--color-win-text)] opacity-70 mb-2 font-mono">@ Waseda University</p>
 
-                <div className="h-px bg-gray-200 my-3"></div>
+                <div className="h-px bg-[var(--color-win-border)] my-3"></div>
 
-                <h4 className="font-bold text-lg">Product & Operations Intern</h4>
-                <p className="text-sm text-gray-600 font-mono">@ Cognisor AI</p>
+                <h4 className="font-bold text-lg">Program Manager</h4>
+                <p className="text-sm text-[var(--color-win-text)] opacity-70 font-mono">@ Cognisor AI</p>
 
-                <div className="h-px bg-gray-200 my-3"></div>
+                <div className="h-px bg-[var(--color-win-border)] my-3"></div>
 
-                <h4 className="font-bold text-lg">Teaching Assistant</h4>
-                <p className="text-sm text-gray-600 font-mono">@ SILS Waseda University</p>
               </div>
             </div>
 
             {/* Timeline Item: 2025-2026 */}
             <div className="relative pl-6 group">
-              <div className="absolute -left-[14px] top-1 w-6 h-6 bg-[var(--color-retro-primary)] flex items-center justify-center border-2 border-black transition-transform group-hover:scale-110 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <div className="absolute -left-[14px] top-1 w-6 h-6 bg-yellow-500 flex items-center justify-center border-2 border-gray-500 transition-transform group-hover:scale-110 shadow-[2px_2px_0px_0px_var(--shadow-color)]">
                 <Trophy size={14} className="text-white" />
               </div>
-              <div className="bg-white border-2 border-retro-border p-4 hard-shadow transition-transform group-hover:-translate-y-1">
-                <span className="text-xs font-bold text-[var(--color-retro-primary)] uppercase tracking-widest block mb-2 bg-blue-50 w-max px-2 py-0.5 border border-blue-200">2025 - 2026</span>
-                <h4 className="font-bold text-lg">Frontend Team Lead</h4>
-                <p className="text-sm text-gray-600 mb-2 font-mono">@ GDGoC-Waseda University</p>
+              <div className="bg-[var(--color-win-body)] border-2 border-gray-500 p-4 hard-shadow transition-transform group-hover:-translate-y-1">
+                <span className="text-xs text-blue-900 font-bold text-[var(--color-win-accent)] uppercase tracking-widest block mb-2 bg-yellow-100 w-max px-2 py-0.5 border border-blue-200">2026 ACHIEVEMENTS</span>
+                <h4 className="font-bold text-lg">Venue's Choice Grand Prize</h4>
+                <p className="text-sm text-[var(--color-win-text)] opacity-70 mb-2 font-mono">@ Google for Developers on Campus Japan Hackathon 2026</p>
 
-                <div className="h-px bg-gray-200 my-3"></div>
+                <div className="h-px bg-[var(--color-win-border)] my-3"></div>
 
 
               </div>
@@ -145,13 +143,24 @@ export default function AboutMe() {
 
             {/* Timeline Item: 2024-2025 */}
             <div className="relative pl-6 group">
-              <div className="absolute -left-[12px] top-2 w-5 h-5 rounded-sm bg-yellow-400 border-2 border-black transition-transform group-hover:scale-110"></div>
-              <div className="bg-white border-2 border-retro-border p-4 hard-shadow transition-transform group-hover:-translate-y-1">
-                <span className="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-2 bg-gray-100 w-max px-2 py-0.5 border border-gray-300">2025 - Present</span>
-                <h4 className="font-bold text-lg">Education Coordinator and Event Intern</h4>
-                <p className="text-sm text-gray-600 font-mono">@ Kaburaki Educational Consulting Co.</p>
+              <div className="absolute -left-[12px] top-2 w-5 h-5 rounded-sm bg-blue-400 border-2 border-black transition-transform group-hover:scale-110"></div>
+              <div className="bg-[var(--color-win-body)] border-2 border-gray-500 p-4 hard-shadow transition-transform group-hover:-translate-y-1">
+                <span className="text-xs text-blue-900 font-bold text-[var(--color-win-accent)] uppercase tracking-widest block mb-2 bg-blue-50 w-max px-2 py-0.5 border border-blue-200">2025 - Present</span>
 
-                <div className="h-px bg-gray-200 my-3"></div>
+                <h4 className="font-bold text-lg">Teaching Assistant</h4>
+                <p className="text-sm text-[var(--color-win-text)] opacity-70 font-mono">@ SILS Waseda University</p>
+
+                <div className="h-px bg-[var(--color-win-border)] my-3"></div>
+
+                <h4 className="font-bold text-lg">Frontend Team Lead</h4>
+                <p className="text-sm text-[var(--color-win-text)] opacity-70 mb-2 font-mono">@ GDGoC-Waseda University</p>
+
+                <div className="h-px bg-[var(--color-win-border)] my-3"></div>
+
+                <h4 className="font-bold text-lg">Education Coordinator and Event Intern</h4>
+                <p className="text-sm text-[var(--color-win-text)] opacity-70 font-mono">@ Kaburaki Educational Consulting Co.</p>
+
+                <div className="h-px bg-[var(--color-win-border)] my-3"></div>
 
               </div>
             </div>
@@ -160,9 +169,9 @@ export default function AboutMe() {
             <div className="relative pl-6">
               <div className="absolute -left-[10px] top-2 w-4 h-4 rounded-full bg-gray-400 border-2 border-black"></div>
               <div className="bg-transparent pl-2 pt-1 opacity-70 hover:opacity-100 transition-opacity">
-                <span className="text-xs font-bold text-gray-500 uppercase tracking-widest block mb-1">Past</span>
+                <span className="text-xs font-bold text-[var(--color-win-text)] opacity-60 uppercase tracking-widest block mb-1">Past</span>
                 <h4 className="font-bold text-base">Editor-in-Chief of School Newspaper</h4>
-                <p className="text-sm text-gray-600 font-mono">@Philippines</p>
+                <p className="text-sm text-[var(--color-win-text)] opacity-70 font-mono">@Philippines</p>
               </div>
             </div>
 
@@ -171,19 +180,19 @@ export default function AboutMe() {
       </div>
 
       {/* Fixed Footer Contacts */}
-      <div className="bg-[var(--color-retro-bg)] border-t-4 border-[var(--color-retro-border)] p-4 shrink-0 flex items-center justify-between shadow-[inset_0_4px_4px_rgba(0,0,0,0.05)]">
+      <div className="bg-[var(--color-retro-bg)] border-t-4 border-gray-500 p-4 shrink-0 flex items-center justify-between shadow-[inset_0_4px_4px_rgba(0,0,0,0.05)]">
 
         <div className="flex items-center gap-3">
-          <a href="https://www.linkedin.com/in/eleale-tee-4b4009314" target="_blank" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
-            <LinkedinIcon size={20} className="text-[var(--color-retro-primary)] group-hover:scale-110 transition-transform" />
+          <a href="https://www.linkedin.com/in/eleale-tee-4b4009314" target="_blank" className="w-10 h-10 bg-[var(--color-win-body)] border-2 border-gray-500 flex items-center justify-center hover:bg-[var(--color-win-secondary)] active:bg-gray-300 hard-shadow transition-all group">
+            <LinkedinIcon size={20} className="text-[var(--color-win-accent)] group-hover:scale-110 transition-transform" />
           </a>
-          <a href="https://github.com/khaleesiyali" target="_blank" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
-            <GithubIcon size={20} className="text-gray-900 group-hover:scale-110 transition-transform" />
+          <a href="https://github.com/khaleesiyali" target="_blank" className="w-10 h-10 bg-[var(--color-win-body)] border-2 border-gray-500 flex items-center justify-center hover:bg-[var(--color-win-secondary)] active:bg-gray-300 hard-shadow transition-all group">
+            <GithubIcon size={20} className="text-[var(--color-win-text)] group-hover:scale-110 transition-transform" />
           </a>
-          <a href="https://www.behance.net/elealetee" target="_blank" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
+          <a href="https://www.behance.net/elealetee" target="_blank" className="w-10 h-10 bg-[var(--color-win-body)] border-2 border-gray-500 flex items-center justify-center hover:bg-[var(--color-win-secondary)] active:bg-gray-300 hard-shadow transition-all group">
             <BehanceIcon size={20} className="text-[#0057ff] group-hover:scale-110 transition-transform" />
           </a>
-          <a href="mailto:tee.eleale@gmail.com" className="w-10 h-10 bg-white border-2 border-retro-border flex items-center justify-center hover:bg-gray-100 active:bg-gray-300 hard-shadow transition-all group">
+          <a href="mailto:tee.eleale@gmail.com" className="w-10 h-10 bg-[var(--color-win-body)] border-2 border-gray-500 flex items-center justify-center hover:bg-[var(--color-win-secondary)] active:bg-gray-300 hard-shadow transition-all group">
             <Mail size={20} className="text-red-500 group-hover:scale-110 transition-transform" />
           </a>
         </div>
@@ -191,7 +200,7 @@ export default function AboutMe() {
         <a
           href="/assets/2026_TEE_CV.pdf"
           download="2026_TEE_CV.pdf"
-          className="flex items-center gap-2 bg-[var(--color-retro-primary)] text-white border-2 border-black px-4 py-2 font-bold hover:brightness-110 active:translate-y-[2px] active:translate-x-[2px] transition-all cursor-pointer shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:shadow-none"
+          className="flex items-center gap-2 bg-[var(--color-retro-primary)] text-white border-2 border-gray-500 px-4 py-2 font-bold hover:brightness-110 active:translate-y-[2px] active:translate-x-[2px] transition-all cursor-pointer shadow-[3px_3px_0px_0px_var(--shadow-color)] active:shadow-none"
         >
           <Download size={18} />
           <span>Save CV to Disk</span>

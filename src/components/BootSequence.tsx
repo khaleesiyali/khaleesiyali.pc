@@ -5,11 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '@/store/useStore';
 
 const BOOT_LOGS = [
-  "Loading Waseda_University_Modules...",
-  "Initializing NLP_Engines...",
-  "Mounting Ghibli_Assets...",
-  "Building PostHog_Hard_Shadows...",
-  "Running AmanAI_Protocol...",
+  "Loading Modules...",
+  "Waking up snakes...",
+  "Initializing Engines...",
+  "Mounting Assets...",
+  "Building Hard_Shadows...",
+  "Running Protocol...",
   "Starting system GUI..."
 ];
 
@@ -26,7 +27,7 @@ export default function BootSequence() {
     }
 
     let timeoutIds: NodeJS.Timeout[] = [];
-    
+
     BOOT_LOGS.forEach((log, index) => {
       const id = setTimeout(() => {
         setLogs(prev => [...prev, log]);
@@ -37,7 +38,7 @@ export default function BootSequence() {
     const finalId = setTimeout(() => {
       setBooting(false);
       sessionStorage.setItem('hasBooted', 'true');
-      
+
       // Auto-open the About Me window when boot finishes
       useStore.getState().openWindow('aboutMe');
     }, 500 * BOOT_LOGS.length + 1000);
@@ -51,11 +52,11 @@ export default function BootSequence() {
       {booting && (
         <motion.div
           initial={{ opacity: 1, scale: 1, borderRadius: 0 }}
-          exit={{ 
-            opacity: 0, 
-            scale: 0, 
+          exit={{
+            opacity: 0,
+            scale: 0,
             borderRadius: 50,
-            transition: { duration: 0.8, ease: "anticipate" } 
+            transition: { duration: 0.8, ease: "anticipate" }
           }}
           className="fixed inset-0 z-[100] bg-black text-green-400 font-mono p-8 flex flex-col justify-end overflow-hidden"
         >

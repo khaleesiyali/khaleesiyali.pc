@@ -46,7 +46,7 @@ export default function Publications() {
 
   return (
     <div
-      className="font-mono text-xs sm:text-sm bg-black text-green-400 p-4 h-full min-h-[300px] overflow-y-auto cursor-text select-text"
+      className="font-mono text-xs sm:text-sm bg-[var(--color-retro-primary)] text-green-400 p-4 h-full min-h-[300px] overflow-y-auto cursor-text select-text"
       onClick={() => document.getElementById('term-input')?.focus()}
     >
       {history.map((item, i) => (

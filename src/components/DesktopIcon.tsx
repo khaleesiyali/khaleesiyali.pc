@@ -12,7 +12,7 @@ interface DesktopIconProps {
 }
 
 export default function DesktopIcon({ id, title, iconSrc, onClick }: DesktopIconProps) {
-  const { openWindow, focusWindow } = useStore();
+  const { openWindow, focusWindow, isDarkMode } = useStore();
 
   const handleDoubleClick = () => {
     openWindow(id);
@@ -33,7 +33,7 @@ export default function DesktopIcon({ id, title, iconSrc, onClick }: DesktopIcon
         <img 
           src={iconSrc} 
           alt={title} 
-          className="w-full h-full object-contain pointer-events-none" 
+          className={`w-full h-full object-contain pointer-events-none transition-all ${isDarkMode ? 'drop-shadow-[0_0_4px_#4DFFFF] drop-shadow-[0_0_2px_#4DFFFF]' : ''}`} 
           draggable={false}
         />
       </div>

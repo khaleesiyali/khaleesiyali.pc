@@ -54,7 +54,7 @@ const PROJECTS = [
     description: 'A personalized carbon footprint calculator designed to help individuals track and reduce their environmental impact.',
     tech: ['React', 'Python: Django'],
     links: { github: 'https://github.com/khaleesiyali/CarbonLeaf_Carbon-Footprint-Calculator', /*behance: '#'*/ },
-    //color: 'bg-yellow-100',
+    color: 'bg-yellow-100',
     border: 'border-yellow-400'
   },
 
@@ -84,52 +84,52 @@ const PROJECTS = [
 
 export default function Projects() {
   return (
-    <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full bg-white overflow-y-auto">
+    <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-full bg-[var(--color-win-body)] overflow-y-auto">
       {PROJECTS.map((proj, i) => (
         <motion.div
-          whileHover={{ y: -5, boxShadow: '6px 6px 0px 0px rgba(0,0,0,1)' }}
+          whileHover={{ y: -5, boxShadow: '6px 6px 0px 0px var(--shadow-color)' }}
           transition={{ type: "spring", stiffness: 400, damping: 25 }}
           key={i}
-          className={`flex flex-col border-2 relative h-full hard-shadow transition-shadow min-w-0 bg-white ${proj.border}`}
+          className={`flex flex-col border-2 relative h-full hard-shadow transition-shadow min-w-0 bg-[var(--color-win-body)] ${proj.border}`}
         >
           {/* Software Box Header */}
-          <div className={`bg-white/50 border-b-2 px-3 py-2 flex items-center justify-between opacity-80 mix-blend-multiply border-inherit overflow-hidden ${proj.color}`}>
-            <span className="font-mono text-[13px] font-bold truncate max-w-[85%]">{proj.title.toLowerCase()}.{proj.type}</span>
-            <span className="text-[10px] w-4 h-4 flex-shrink-0 flex items-center justify-center border border-black/20 rounded-sm bg-white font-bold">↗</span>
+          <div className={`border-b-2 px-3 py-2 flex items-center justify-between opacity-90 border-inherit overflow-hidden ${proj.color}`}>
+            <span className="font-mono text-[13px] font-bold text-black truncate max-w-[85%]">{proj.title.toLowerCase()}.{proj.type}</span>
+            <span className="text-[11px] text-black w-4 h-4 flex-shrink-0 flex items-center justify-center border border-black/30 rounded-sm bg-white/60 font-black">↗</span>
           </div>
 
           {/* Box Content */}
           <div className="p-5 flex-1 flex flex-col">
             <div className="mb-4 flex-1">
-              <h3 className="font-black text-xl mb-1 text-neutral-800 tracking-tight leading-tight">{proj.title}</h3>
-              <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3 pb-2 border-b border-gray-100">{proj.role}</p>
-              <p className="text-sm text-neutral-600 leading-relaxed">{proj.description}</p>
+              <h3 className="font-black text-xl mb-1 text-[var(--color-win-text)] tracking-tight leading-tight">{proj.title}</h3>
+              <p className="text-[10px] font-bold text-[var(--color-win-text)] opacity-60 uppercase tracking-widest mb-3 pb-2 border-b border-gray-100">{proj.role}</p>
+              <p className="text-sm text-[var(--color-win-text)] opacity-80 leading-relaxed">{proj.description}</p>
             </div>
 
             <div className="mt-auto">
               {/* Tech Stack Pills */}
               <div className="flex flex-wrap gap-1.5 mb-4">
                 {proj.tech.map(tech => (
-                  <span key={tech} className="bg-gray-100 border border-gray-200 text-gray-500 px-2 py-0.5 text-[11px] font-bold rounded-sm uppercase tracking-wide">
+                  <span key={tech} className="bg-[var(--color-win-secondary)] border border-[var(--color-win-border)] text-[var(--color-win-text)] opacity-60 px-2 py-0.5 text-[11px] font-bold rounded-sm uppercase tracking-wide">
                     {tech}
                   </span>
                 ))}
               </div>
 
               {/* Action Links */}
-              <div className="flex justify-end gap-2 border-t-2 border-dashed border-gray-200 pt-3">
+              <div className="flex justify-end gap-2 border-t-2 border-dashed border-[var(--color-win-border)] pt-3">
                 {proj.links.github && (
-                  <a href={proj.links.github} target="_blank" rel="noreferrer" className="w-9 h-9 flex items-center justify-center border-2 border-gray-300 bg-gray-50 hover:bg-black hover:text-white hover:border-black transition-colors group cursor-pointer" title="View Source on GitHub">
+                  <a href={proj.links.github} target="_blank" rel="noreferrer" className="w-9 h-9 flex items-center justify-center border-2 border-[var(--color-win-border)] bg-[var(--color-win-secondary)] text-[var(--color-win-text)] hover:bg-[var(--color-retro-primary)] hover:text-white hover:border-[var(--color-retro-primary)] transition-colors group cursor-pointer" title="View Source on GitHub">
                     <IconGithub size={18} />
                   </a>
                 )}
                 {proj.links.figma && (
-                  <a href={proj.links.figma} target="_blank" rel="noreferrer" className="w-9 h-9 flex items-center justify-center border-2 border-gray-300 bg-gray-50 hover:bg-[#f24e1e] hover:text-white hover:border-[#f24e1e] transition-colors group cursor-pointer" title="View Design on Figma">
+                  <a href={proj.links.figma} target="_blank" rel="noreferrer" className="w-9 h-9 flex items-center justify-center border-2 border-[var(--color-win-border)] bg-[var(--color-win-secondary)] text-[var(--color-win-text)] hover:bg-[#f24e1e] hover:text-white hover:border-[#f24e1e] transition-colors group cursor-pointer" title="View Design on Figma">
                     <IconFigma size={18} />
                   </a>
                 )}
                 {proj.links.behance && (
-                  <a href={proj.links.behance} target="_blank" rel="noreferrer" className="w-9 h-9 flex items-center justify-center border-2 border-gray-300 bg-gray-50 hover:bg-[#0057ff] hover:text-white hover:border-[#0057ff] transition-colors group cursor-pointer" title="View Study on Behance">
+                  <a href={proj.links.behance} target="_blank" rel="noreferrer" className="w-9 h-9 flex items-center justify-center border-2 border-[var(--color-win-border)] bg-[var(--color-win-secondary)] text-[var(--color-win-text)] hover:bg-[#0057ff] hover:text-white hover:border-[#0057ff] transition-colors group cursor-pointer" title="View Study on Behance">
                     <IconBehance size={18} />
                   </a>
                 )}

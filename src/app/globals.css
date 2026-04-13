@@ -1,23 +1,69 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-retro-bg: #c0c0c0;
-  --color-retro-primary: #0000aa;
-  --color-retro-border: #808080;
-  --color-retro-window: #ebebeb;
-  --color-retro-text: #000000;
+:root {
+  /* Dynamic Retro Frame Palette */
+  --retro-bg-val: #c0c0c0;
+  --retro-primary-val: #0000aa;
+  --retro-border-val: #808080;
+  --retro-window-val: #ebebeb;
+  --retro-text-val: #000000;
+
+  /* Dynamic Window Interior Palette */
+  --win-body-val: #ffffff;
+  --win-text-val: #171717;
+  --win-border-val: #d1d5db;
+  --win-secondary-val: #f3f4f6;
+  --win-accent-val: #0000aa;
   
+  --bg-main: #c0c0c0;
+  --fg-main: #000000;
+  
+  --shadow-color: #000000;
+}
+
+.dark {
+  /* Dynamic Retro Frame Palette */
+  --retro-bg-val: #1E1E1E;
+  --retro-primary-val: #0A1A2F;
+  --retro-border-val: #0A1A2F;
+  --retro-window-val: #1E1E1E;
+  --retro-text-val: #EAEAEA;
+
+  /* Dynamic Window Interior Palette */
+  --win-body-val: #1A1A1A;
+  --win-text-val: #EAEAEA;
+  --win-border-val: #333333;
+  --win-secondary-val: #1A1A1A;
+  --win-accent-val: #4DFFFF;
+
+  --bg-main: #1E1E1E;
+  --fg-main: #EAEAEA;
+  
+  --shadow-color: #FFFFFF;
+}
+
+@theme inline {
+  --color-retro-bg: var(--retro-bg-val);
+  --color-retro-primary: var(--retro-primary-val);
+  --color-retro-border: var(--retro-border-val);
+  --color-retro-window: var(--retro-window-val);
+  --color-retro-text: var(--retro-text-val);
+  
+  --color-win-body: var(--win-body-val);
+  --color-win-text: var(--win-text-val);
+  --color-win-border: var(--win-border-val);
+  --color-win-secondary: var(--win-secondary-val);
+  --color-win-accent: var(--win-accent-val);
+
   --shadow-retro: 4px 4px 0px 0px rgba(0,0,0,1);
   --shadow-retro-hover: 2px 2px 0px 0px rgba(0,0,0,1);
   --shadow-retro-window: 6px 6px 0px 0px rgba(0,0,0,1);
   
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-:root {
-  --background: #c0c0c0;
-  --foreground: #000000;
+  
+  --background: var(--bg-main);
+  --foreground: var(--fg-main);
 }
 
 body {
@@ -29,12 +75,9 @@ body {
 }
 
 /* Base custom utilities */
-.hard-shadow {
-  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-}
-.hard-shadow-lg {
-  box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
-}
+.hard-shadow { box-shadow: 4px 4px 0px 0px var(--shadow-color); }
+.hard-shadow-pressed { box-shadow: 2px 2px 0px 0px var(--shadow-color); transform: translate(2px, 2px); }
+.hard-shadow-lg { box-shadow: 6px 6px 0px 0px var(--shadow-color); }
 
 @keyframes crt-flicker {
   0% { opacity: 0.05; }
@@ -42,17 +85,16 @@ body {
   100% { opacity: 0.05; }
 }
 
-.crt-flicker {
-  animation: crt-flicker 0.15s infinite;
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
+.crt-flicker { animation: crt-flicker 0.15s infinite; }
+
 @keyframes scanline {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100vh);
-  }
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
 }
 
 .scanline::before {

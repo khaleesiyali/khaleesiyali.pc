@@ -10,6 +10,11 @@ interface AppState {
   isDarkMode: boolean;
   viewMode: ViewMode;
   
+  // Internet App State
+  isArticleView: boolean;
+  currentPostId: string | null;
+  notifications: string[];
+
   // Actions
   openWindow: (id: string) => void;
   closeWindow: (id: string) => void;
@@ -18,6 +23,12 @@ interface AppState {
   restoreWindow: (id: string) => void;
   toggleDarkMode: () => void;
   setViewMode: (mode: ViewMode) => void;
+
+  // Internet App Actions
+  setIsArticleView: (val: boolean) => void;
+  setCurrentPostId: (id: string | null) => void;
+  addNotification: (msg: string) => void;
+  popNotification: () => void;
 }
 
 export const useStore = create<AppState>()(
@@ -28,6 +39,9 @@ export const useStore = create<AppState>()(
       minimizedWindows: [],
       isDarkMode: false,
       viewMode: 'os',
+      isArticleView: false,
+      currentPostId: null,
+      notifications: [],
       
       openWindow: (id) => set((state) => ({
         openWindows: state.openWindows.includes(id) ? state.openWindows : [...state.openWindows, id],
@@ -61,7 +75,12 @@ export const useStore = create<AppState>()(
       
       toggleDarkMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
       
-      setViewMode: (mode) => set({ viewMode: mode })
+      setViewMode: (mode) => set({ viewMode: mode }),
+
+      setIsArticleView: (val) => set({ isArticleView: val }),
+      setCurrentPostId: (id) => set({ currentPostId: id }),
+      addNotification: (msg) => set((state) => ({ notifications: [...state.notifications, msg] })),
+      popNotification: () => set((state) => ({ notifications: state.notifications.slice(1) }))
     }),
     {
       name: 'portfolio-os-storage',
